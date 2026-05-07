@@ -272,6 +272,25 @@ p {
   margin-bottom: 34px;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .works .section-heading h2 {
   white-space: nowrap;
   font-size: clamp(1.35rem, 3.4vw, 2.45rem);
