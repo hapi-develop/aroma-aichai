@@ -392,18 +392,33 @@ p {
   text-transform: uppercase;
 }
 
+.process-carousel {
+  position: relative;
+}
+
 .process-list {
-  display: grid;
-  gap: 16px;
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 4px 4px 20px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.process-list::-webkit-scrollbar {
+  display: none;
 }
 
 .process-item {
   display: grid;
-  grid-template-columns: 72px 0.55fr 1fr;
-  gap: 22px;
-  align-items: start;
-  padding: 24px;
+  flex: 0 0 min(82vw, 360px);
+  min-height: 260px;
+  gap: 16px;
+  align-content: start;
+  padding: 28px;
   border-radius: var(--radius-medium);
+  scroll-snap-align: start;
 }
 
 .process-item span {
@@ -411,6 +426,32 @@ p {
   font-family: "Noto Serif JP", serif;
   font-size: 1.7rem;
   font-weight: 700;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.carousel-button {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(75, 49, 37, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 250, 241, 0.78);
+  color: var(--color-cocoa);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.carousel-button:hover {
+  background: var(--color-cocoa);
+  color: var(--color-white);
 }
 
 .contact {
